@@ -1,0 +1,95 @@
+ function myFunc(){
+	var a = 1 , b = 2 , c = 3 ;
+	return [a,b,c];
+}
+
+function myFunc(){
+	var x = 0;
+	return (x+=1, x)
+}
+
+> function myFunc(x){
+	switch(x){
+	case 1:			// se usar console.log tem que usar o break depois.
+	return 'x é 1';
+	break;
+	case 2:
+	return 'x é 2';
+	break;
+	default:
+	return 'x não é nem 1 nem 2';
+	}
+}
+
+var counter = 0;
+
+while(counter < 10){
+	console.log(counter);
+	counter++;
+}
+
+var championship = 'Paulistinha';
+console.log(championship);
+
+var teams = ['Santos', 'Palmeiras','Corinthians', 'São Paulo','Bragrantino'];
+console.log(teams);
+
+function showTeamPosition(posicao){
+	if(posicao < 1 || posicao > 5){
+		return 'Não temos a informação do time nessa posição!';
+	}
+	return 'O time que está na posição' + posicao + 'lugar é o '+ teams[posicao - 1]+'.';
+}
+
+console.log(showTeamPosition(1));
+console.log(showTeamPosition(2));
+console.log(showTeamPosition(6));
+
+var num = 20;
+while(num <= 30){
+	console.log(num++);
+}
+
+function convertToHex(color){
+	switch(color){
+		case 'red':
+			return 'O hexadecimal para a cor '+color+ ' é #FF0000.' ;
+		case 'blue':
+			return 'O hexadecimal para a cor '+color+ ' é #FF1000.' ;
+		case 'black':
+			return 'O hexadecimal para a cor '+color+ ' é #FF1100.' ;
+		case 'green':
+			return 'O hexadecimal para a cor '+color+ ' é #FF1120.' ;
+		case 'yellow':
+			return 'O hexadecimal para a cor '+color+ ' é #FF2000.' ;
+		default:
+		return 'Não temos o equivalente hexadecimal para ' + color + ' .';
+	}
+}
+
+function convertToHex(color){
+	var hexa;
+	switch(color){
+		case 'red':
+		hexa = '#FF0000';
+		break;
+		case 'blue':
+		hexa = '#FF1000';
+		break;
+		case 'black':
+		hexa = '#FF1100';
+		break;
+		case 'green':
+		hexa = '#FF1120';
+		break;
+		case 'yellow':
+		hexa = '#FF2000';
+		break;
+		default:
+		return 'Não temos o equivalente hexadecimal para ' + color + ' .';
+	}
+	return 'O hexadecimal para a cor '+color+ ' é ' + hexa + ' .';
+}
+
+
+

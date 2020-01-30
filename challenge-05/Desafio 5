@@ -1,0 +1,49 @@
+var ale = [1, 'a',2,'b',4.1];
+
+function retorna(par){
+	return par;
+}
+
+function retorna2(array, num){
+	return array[num];
+}
+
+var ale2 = ['a',1,1.1,true,NaN,null];
+
+function book(nome){
+	var allbooks = {
+		'Dalto da Galera': {
+			quantidadePaginas: 56,
+			autor: 'Dalto',
+			editora: 'Saraiva'
+		},
+		'Dalto o Retorno': {
+			quantidadePaginas: 100,
+			autor: 'Dalto',
+			editora: 'Pé di Rato'
+		},
+		'Dalto em ação'  : {
+			quantidadePaginas: 243,
+			autor: 'Dalto',
+			editora: 'Vila Rural Books'},
+	}
+	
+	// return !nome ? allbooks : allbooks[nome]; usando ternario
+	if(!nome){
+		return allbooks;
+	}
+	
+	return allbooks[nome];
+}
+
+var bookname = 'Dalto da Galera';
+
+'O livro'+ bookname +'tem' + book(bookname). quantidadePaginas + 'páginas!';
+
+
+'O livro Dalto da Galera tem ' + book('Dalto da Galera'). quantidadePaginas + 'páginas!';
+
+'O autor do livro' + bookname + 'é' + book(bookname).autor + '.';
+
+'O livro' + bookname + 'foi publicado pela editora' + book(bookname).editora + '.';
+

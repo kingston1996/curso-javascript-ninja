@@ -1,0 +1,47 @@
+var carro = {
+	marca: 'Ferrari',
+	modelo: 'Venom',
+	placa: 'awe-3645',
+	ano: 2013,
+	cor: 'Azul',
+	quantasPortas: 2,
+	assentos: 5,
+	quantidadePessoas: 0
+};
+
+carro.mudarCor = function(cor){
+	carro.cor = cor;
+};
+
+carro.obterCor = function(){
+	return carro.cor;
+};
+
+carro.obterModelo = function(){
+	return carro.modelo;
+};
+
+carro.obterMarca = function(){
+	return carro.marca
+};
+
+carro.obterMarcaModelo = function(){
+	return 'Esse carro é um' + carro.obterMarca() +' '+ carro.obterModelo();
+};
+
+
+
+carro.adicionarPessoas = function(numeroPessoas){
+	var totalPessoas = carro.quantidadePessoas + numeroPessoas;
+	if(carro.assentos === numeroPessoas){
+		return 'Carro Lotado!'
+	}
+	if( totalPessoas > carro.assentos){
+	var quantasPessoasCabem = carro.assentos - carro.quantidadePessoas;
+	var pluralOuSingular = quantasPessoasCabem === 1 ? 'pessoa' : 'pessoas';
+		return 'Só cabem mais '+ quantasPessoasCabem +''+ pluralOuSingular + '!';
+	}
+
+	carro.quantidadePessoas = totalPessoas;
+	return 'Já temos '+ carro.quantidadePessoas + ' pessoas no carro!';
+};

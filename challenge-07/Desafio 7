@@ -1,0 +1,44 @@
+var arr = [1, true, 2.1, NaN, 'dalto'];
+
+function addItem(add){
+	arr.push(add);
+	return arr;
+}
+
+addItem([undefined,{carro : 'preto'},false]);
+
+console.log('O segundo elemento do segundo array é '+ arr[6][1] + ' .');
+
+console.log('O primeiro array tem '+arr.length+' itens.');
+
+console.log('O segundo array tem '+ (arr[6].length) +' itens.');
+
+var num = 10;
+
+while(num <= 20){
+	if(num % 2 === 0){
+		console.log('Número Par: ' + num);
+	}
+	num++;
+}
+
+while(num <= 20){
+	if(num % 2 != 0){
+		console.log('Número Ímpar: ' + num);
+	}
+	num++;
+}
+
+var counter = 10;
+while(counter <= 20){
+	counter % 2 === 0 ? console.log(counter) : ''; //utilizando ternário
+	counter++;
+}
+
+for(var num = 100; num <= 120; num++){
+	num % 2 === 0 ? console.log('Nº Par: ' + num ) : '';
+}
+
+for(var num = 111; num <= 125; num++){
+	num % 2 != 0 ? console.log('Nº Ímpar: ' + num ) : '';
+}
