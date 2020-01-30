@@ -1,7 +1,9 @@
+(function(){
 /*
 Crie uma IIFE que envolva todo o código desse arquivo. Faça também a
 indentação correta do código, para ficar dentro da IIFE.
 */
+
 
 /*
 Analise as funções abaixo (`myFunction`, `myFunction2` e `myFunction3`, e
@@ -9,13 +11,23 @@ ajuste o posicionamento das variáveis e funções internas, para que os código
 dentro de `console.log` que estão retornando `undefined` retornem o valor
 correto da variável ou função chamada.
 */
-function myFunction() {
+
+/*function myFunction() {
     console.log( 'Na função `myFunction`, o primeiro número é', number1 );
     console.log( 'Na função `myFunction`, o segundo número é', number2 );
     var number1 = 10;
     return number1 + number2;
     var number2 = 20;
+}*/
+
+function myFunction() {
+    var number1 = 10;
+    var number2 = 20;
+	console.log( 'Na função `myFunction`, o primeiro número é', number1 );
+    console.log( 'Na função `myFunction`, o segundo número é', number2 );
+	return number1 + number2;
 }
+
 myFunction();
 
 /*
@@ -105,3 +117,4 @@ console.log( 'O resultado da divisão é:' );
 
 console.log( 'O resto da divisão é:' );
 // ?
+})();
