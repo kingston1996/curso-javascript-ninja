@@ -1,8 +1,9 @@
+(function(){
 /*
 Envolva todo o código desse desafio em uma IIFE.
 Crie um arquivo chamado index.html e adicione esse script ao HTML.
 */
-
+  console.log('TESTANDO SCRIPT CHALLENGE 15');
 /*
 Crie uma função construtora chamada "Person". Esse construtor deve ter
 as seguintes características:
@@ -52,3 +53,4 @@ cada um. A frase deverá ser no formato:
 */
 console.log( '\nNova idade das pessoas:' );
 // ?
+})();
