@@ -61,12 +61,12 @@ O resultado final deve ficar mais ou menos assim:
 5 nomes foi somente uma sugestão ;)
 */
 var nomes = ['Dalto', 'Tonho', 'Zé', 'Shazam', 'Lorin'];
-console.log(nomes);
-console.log('Tamanho: ', nomes.length);
+//console.log(nomes);
+//console.log('Tamanho: ', nomes.length);
 var frase = nomes.reduce(function (acumulado, atual, index){
-	console.log('Nomes -1 = ', nomes.length - 1);
+	//console.log('Nomes -1 = ', nomes.length - 1);
 	var separador =  nomes.length -1 === index ? ' e ' : ', ';
-	console.log('Index: ', index);
+	//console.log('Index: ', index);
 	return acumulado + separador + atual;
 }).concat(' são meus amigos.');
 console.log( '\nMeus amigos:', frase );
