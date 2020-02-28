@@ -68,7 +68,7 @@ var frase = nomes.reduce(function (acumulado, atual, index){
 	var separador =  nomes.length -1 === index ? ' e ' : ', ';
 	console.log('Index: ', index);
 	return acumulado + separador + atual;
-});
+}).concat(' são meus amigos.');
 console.log( '\nMeus amigos:', frase );
 // ?
 
@@ -77,6 +77,7 @@ Usando o replace(), faça a string "Roberto" virar "Roberta".
 Mostre o resultado no console.
 */
 console.log( '\nEra "Roberto", agora é:' );
+console.log('Roberto'.replace('to','ta'));
 // ?
 
 /*
@@ -84,6 +85,8 @@ Mostre no console a parte "nando" da string "Fernando". Use o método que
 faz a busca do final para o início da string.
 */
 console.log( '\nParte de uma string:' );
+console.log('Fernando'.slice( 'Fernando'.lastIndexOf('nando')));
+console.log('Fernando'.substring(8,3));
 // ?
 
 /*
@@ -95,6 +98,11 @@ e minúsculas.
 de qualquer tamanho, escrito de qualquer forma.
 Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
 */
-console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
+var myName = 'Jonatas';
+var myNewName = [];
+for (var i = 0; i < myName.length; i++) {
+	myNewName.push(i % 2 === 0 ? myName[i].toLowerCase() : myName[i].toUpperCase());
+}
+console.log( '\nNome com letras intercaladas entre caixa alta e baixa:', myNewName.join('') );
 // ?
 })();
