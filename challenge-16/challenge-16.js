@@ -4,7 +4,7 @@
 2. Adicione a diretiva 'use strict';
 3. Crie um arquivo index.html e adicione esse script à ele.
 */
-
+	'use strict';
 /*
 Declare uma variável chamada `name` que receba seu primeiro nome.
 Mostre no console todas as letras do seu nome separadas, com a frase:
@@ -14,7 +14,18 @@ Ex: no caso do nome ser "Fernando", deve mostrar as frases:
 - "e é a 2ª letra do meu nome."
 E assim por diante, até a última.
 */
-console.log( 'As letras do seu nome:' );
+	var name = 'Jonatas';
+	for (var i = 0; i < name.length; i++) {
+		console.log(name[i] + ' é a '+ [i + 1] + 'º letra do meu nome.');		
+	}
+	console.log( 'As letras do seu nome:', name);
+
+	console.log('----------Variação-----------');
+	for (var i = 0, len = name.length; i < len; i++) {
+		console.log(name.charAt(i) + ' é a ' + (i+1) + 'º letra do meu nome.');
+	}
+	console.log( 'As letras do seu nome:', name);
+	console.log('----------------------------------------');
 // ?
 
 /*
@@ -29,7 +40,15 @@ curso para fazer isso funcionar corretamente :)
 - Mostre no console o nome no formato slug, e o resultado final. Use um
 console.log para cada formato.
 */
-console.log( '\nNome convertido à partir de um slug:' );
+	var fullName = 'jonatas-ferreira';
+	console.log(fullName);
+	var newfullName = fullName.split('-').map(function(name){
+		return name.charAt(0).toUpperCase() + name.slice(1);
+	}).join(' ');
+
+	//console.log(newfullName);
+	//console.log(newfullName.join(' '));
+console.log( '\nNome convertido à partir de um slug:', newfullName );
 // ?
 
 /*
@@ -41,7 +60,16 @@ O resultado final deve ficar mais ou menos assim:
 - Detalhe: o código abaixo deve funcionar com um array de qualquer tamanho.
 5 nomes foi somente uma sugestão ;)
 */
-console.log( '\nMeus amigos:' );
+var nomes = ['Dalto', 'Tonho', 'Zé', 'Shazam', 'Lorin'];
+console.log(nomes);
+console.log('Tamanho: ', nomes.length);
+var frase = nomes.reduce(function (acumulado, atual, index){
+	console.log('Nomes -1 = ', nomes.length - 1);
+	var separador =  nomes.length -1 === index ? ' e ' : ', ';
+	console.log('Index: ', index);
+	return acumulado + separador + atual;
+});
+console.log( '\nMeus amigos:', frase );
 // ?
 
 /*
