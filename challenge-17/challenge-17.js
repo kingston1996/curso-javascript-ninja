@@ -113,7 +113,12 @@ meses que estão no texto, não precisa adicionar todos.
 Com o que vimos até agora, você consegue fazer :D
 Mostre a regex no console.
 */
+
 console.log( '\nRegex que vai fazer o match com as datas do texto:' );
+
+var regexDate = /(\d\d) de (junho|julho) de (\d\d\d\d)/;
+console.log(regexDate);
+
 // ?
 
 /*
@@ -124,5 +129,9 @@ Após criar a função, faça o replace das datas no texto, mostrando no
 console o resultado.
 */
 console.log( '\nReplace de datas:' );
+function replaceDate(regex, dia, mes, ano){
+	return dia + '/' + getMonthNumber(mes) + '/' + ano;
+}
+console.log(text.replace(regexDate, replaceDate));
 // ?
 })();
