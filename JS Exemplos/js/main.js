@@ -18,7 +18,7 @@
 	console.log(texto.match(/[A-Za-z0-9]/g));
 	console.log(texto.replace('O','o'));
 	console.log(texto.replace(/O/,'Do'));
-	console.log(texto.replace(/o/g,'Do'));*/
+	console.log(texto.replace(/o/g,'Do'));
 	console.log(texto.replace(/(para)/g, '--$1--'));
 	console.log(texto.replace(/(l)(e)/g, '--$2--'));
 	console.log(texto.replace(/(l)(e)/g,  function(){
@@ -35,7 +35,8 @@
 	console.log(nome.replace(/(\w)(\w)/g, function(capturaTotal, letra1, letra2){
 		return letra1.toUpperCase() + letra2.toLowerCase();
 	}));
-
+*/
+	
 
 
 })();
