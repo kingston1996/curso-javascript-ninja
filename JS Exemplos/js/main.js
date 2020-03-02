@@ -35,8 +35,21 @@
 	console.log(nome.replace(/(\w)(\w)/g, function(capturaTotal, letra1, letra2){
 		return letra1.toUpperCase() + letra2.toLowerCase();
 	}));
-*/
-	
+*/	
+console.log('Jonatas'.match('tas'));
+console.log('111.111.333-45'.split('.'));
+console.log('111.111.333-45'.split(/\D/));
+console.log('111.111.333-45'.search(/\./));
+console.log('111.111.333-45'.search(/\f/));
+console.log('111.111.333-45'.indexOf('.'));
+console.log('111.111.333-45'.indexOf('f'));
 
+var regex = /\d/g;
+var nome = 'dal456to';
+console.log(regex.exec(nome));
+console.log(regex.exec(nome));
+console.log(regex.exec(nome));
+console.log(regex.exec(nome));
+console.log('Pimba\'s bar');
 
 })();
