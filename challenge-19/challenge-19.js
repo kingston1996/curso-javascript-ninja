@@ -14,7 +14,6 @@ ela pode ser concatenada para gerar uma regex em tempo de execução,
 diferente da regex literal, onde toda a regex precisa estar pronta antes
 da utilização.
 */
-
 /*
 - Usando o construtor de Regex, crie uma regex que case somente com números
 no início da string. O match precisa ser feito para todas as
@@ -25,6 +24,8 @@ linha, independente de quantos caracteres de número estiverem juntos.
 no console:
 */
 console.log( 'Regex para números usando o construtor:' );
+var justNumbersRegex = new RegExp('^\\d+', 'gm');
+console.log(justNumbersRegex);
 // ?
 
 /*
@@ -34,6 +35,7 @@ resultado no console. O resultado deve ser:
 */
 var text = '10 anos.\n50 discos vendidos.\nE nem 10% dos meus amigos o conhece.';
 console.log( '\nNúmeros no início da linha do texto:\n' + text, '\n' );
+console.log(text.match(justNumbersRegex));
 // ?
 
 /*
@@ -45,6 +47,8 @@ linha, independente de quantos caracteres de número estiverem juntos.
 Mostre a regex no console:
 */
 console.log( '\nRegex para números somente no final das linhas:' );
+var numbersAtTheEnd = /\d+$/gm;
+console.log(numbersAtTheEnd);
 // ?
 
 /*
@@ -55,6 +59,7 @@ O resultado deve ser:
 */
 var otherText = 'Silvio Santos, nome artístico de Senor Abravanel (Rio de Janeiro, 12\n de dezembro de 1930), é um apresentador de televisão e empresário brasileiro.\n Proprietário do Grupo Silvio Santos, que inclui empresas como a Liderança\n Capitalização (administradora da loteria Tele Sena), a Jequiti Cosméticos e o\n Sistema Brasileiro de Televisão (mais conhecido como SBT), Silvio Santos possui\n um patrimônio avaliado em aproximadamente 6\n bilhões de reais.';
 console.log( '\nNúmeros no final da linha:\n\n', otherText, '\n' );
+console.log(otherText.match(numbersAtTheEnd));
 // ?
 
 /*
