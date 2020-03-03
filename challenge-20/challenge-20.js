@@ -1,3 +1,4 @@
+(function(win, doc){
 /*
 1. Envolva todo o conteúdo desse desafio em uma IIFE.
 2. Adicione a diretiva 'use strict';
@@ -7,7 +8,7 @@ a marcação criada nele para fazer nosso desafio ;)
 
 O HTML NÃO PODE ser alterado!
 */
-
+    'use strict';
 /*
 Ao carregar a página, pergunte ao usuário "Qual o seu nome?". Atribua o
 resultado à uma variável chamada `username`. Se o usuário não digitar um
@@ -105,3 +106,4 @@ Alguns e-mails inválidos:
     - "agua_@evida.br.com"
 */
 // ?
+})(window, document);
