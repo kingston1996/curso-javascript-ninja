@@ -1,55 +1,55 @@
-(function(){
-	var texto = 'O tempo é muito lento 30 minutos para os que esperam Muito rápido 1 hora para os que têm medo Muito longo para os que lamentam Muito curto para os que festejam para os que amam, o tempo é eterno.';
-	console.log(texto);
-	/*console.log(texto.match(/p/));
-	console.log(texto.match(/m/g));
-	console.log(texto.match(/\w/));
-	console.log(texto.match(/\w/g));
-	console.log(texto.match(/esperam/));
-	console.log(texto.match(/dalto/));
-	console.log(texto.match(/\d/));
-	console.log(texto.match(/\d/g));
-	console.log(texto.match(/\d\d/));
-	console.log(texto.match(/\d\d/g));
-	console.log(texto.match(/(ui)/g));
-	console.log(texto.match(/[ab]/g));
-	console.log(texto.match(/[(ab)(cd)]/g));
-	console.log(texto.match(/[a-z]/g));
-	console.log(texto.match(/[A-Za-z0-9]/g));
-	console.log(texto.replace('O','o'));
-	console.log(texto.replace(/O/,'Do'));
-	console.log(texto.replace(/o/g,'Do'));
-	console.log(texto.replace(/(para)/g, '--$1--'));
-	console.log(texto.replace(/(l)(e)/g, '--$2--'));
-	console.log(texto.replace(/(l)(e)/g,  function(){
-		console.log(arguments);
-	}));
-	console.log(texto.replace(/(l)(e)/g,  function(capturaTotal, l, e){
-		return (l + e).toUpperCase();
-	}));
-	var nome = 'Jonatas';
-	console.log(nome);
-	console.log(nome.replace(/(\w)/g, function(capturaTotal, letra){
-		return letra.toUpperCase();
-	}));
-	console.log(nome.replace(/(\w)(\w)/g, function(capturaTotal, letra1, letra2){
-		return letra1.toUpperCase() + letra2.toLowerCase();
-	}));
-*/	
-console.log('Jonatas'.match('tas'));
-console.log('111.111.333-45'.split('.'));
-console.log('111.111.333-45'.split(/\D/));
-console.log('111.111.333-45'.search(/\./));
-console.log('111.111.333-45'.search(/\f/));
-console.log('111.111.333-45'.indexOf('.'));
-console.log('111.111.333-45'.indexOf('f'));
+(function(win, doc){
+	'use strict';
+	/*if(win === window)
+	console.log('win é um referência global');
+	console.log('Essa mensagem sempre será exibida! ');
 
-var regex = /\d/g;
-var nome = 'dal456to';
-console.log(regex.exec(nome));
-console.log(regex.exec(nome));
-console.log(regex.exec(nome));
-console.log(regex.exec(nome));
-console.log('Pimba\'s bar');
+	
+	var obj = {
+		prop1: {
+			prop2: { prop3: 1}
+		}
+	}
+	with(obj.prop1.prop2){
+		console.log(prop3);
+	}
 
-})();
+	alert('Exibindo mensagem no browser!');
+	
+	if(prompt('Você é top?'))
+		console.log('Para de ser!');
+	else
+		console.log('Ainda bem até outro dia...');
+	
+	var pergunta = prompt('Salve, está bem?');
+	if(pergunta)
+		console.log('legal...');
+	else
+		console.log('Fala logo desgraça...');
+	
+	var perg = confirm('Deseja mesmo ser top?');
+	if(perg)
+		console.log('Se tornou top mesmo!!', perg)
+	else
+		console.log('Continua pé di rato então....', perg);
+	console.log(doc.getElementById('my-link'));
+	console.log(doc.getElementsByClassName('my-link'));
+	
+	
+	var $inputs = doc.getElementsByTagName('input');
+	console.log($inputs.length);
+*/
+	var $inputUsername = doc.querySelector('#username');
+	var $inputPassword = doc.querySelector('#password');
+	var $button 	   = doc.querySelector('#button');
+	$inputUsername.value = 'Dalto Dunga';
+	$inputPassword.value = 'senha';
+	$button.addEventListener('click', function(event){
+		event.preventDefault();
+		console.log('Click no botão!');
+	}, false);
+	$inputUsername.addEventListener('click', function(event){
+		alert('Clickou no input');
+	}, false);
+	console.log($inputUsername.value, $inputPassword.value);
+})(window, document);
