@@ -1,51 +1,64 @@
 (function(win, doc){
 	'use strict';
-	/*console.log('ínicio');
-	setTimeout(function(){
-		console.log('Executou o setTimeout em 1000ms');
-	}, 1000);
-	setInterval(function(){
-		console.log('Executou o setInterval em 1000ms');
-	}, 1000);
-	var counter = 0;
-	function timer(){
-		console.log('Timer', counter++);
-		if(counter > 10)
-			return console.log('Fim da Função Timer!');
-			setTimeout(timer, 1000);
+	
+	function myFunction(){
+		Array.prototype.forEach.call(arguments, function(item, index){
+			console.log(item);
+
+		});
 	}
-	timer();
-	console.log('fim');
-	var counter = 0;
-	function timer(){
-		console.log('Timer: ', counter++);
-		if(counter > 10)
-			return;
-		setTimeout(timer, 1000);
+	
+	console.log(myFunction(1,2,3,4,5));
+
+
+
+
+
+
+	/*
+	function myFunction(nome, sobrenome){
+		this.fullName = nome + ' ' + sobrenome;
 	}
-	timer();
+	var jonatas = new myFunction('Jonatas', 'Ferreira');
+	console.log(jonatas.fullName);
 
 
-	function timer(){
-		console.log('Timer: ', counter++);
-
-		setInterval(timer, 1000);
+	function myFunction(nome, sobrenome){
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.age = 24;
 	}
-	timer();*/
 
-	var counter = 0;
-	var $button = doc.querySelector('[data-js="button"]');
-	var temporizador;
-	function timer(){
-		console.log('Timer: ', counter++);
-		if(counter > 20)
-			return;
-		temporizador = setTimeout(timer, 1000);
-		//console.log('temporizador: ', temporizador);
+	myFunction.prototype.fullName = function(){
+		return this.nome + ' ' + this.sobrenome + ' ' + this.age;
 	}
-	timer();
 
-	$button.addEventListener('click', function(){
-		clearTimeout(temporizador);
-	}, false);
+	var jonatas = new myFunction('Jonatas', 'Ferreira');
+	//myFunction.prototype.age = 23;
+	console.log(jonatas.fullName());
+	function myFunction(a,b,c,d, e){
+		console.log(this.lastName, a, b, c, d, e);
+	}
+	var obj = {
+		lastName: 'Dng'
+	};
+
+	var obj2 = {
+		lastName: 'Dng 2'
+	};
+	var arr = [1,2,3,4,5]
+	myFunction.call(obj2);
+	myFunction.apply(obj2, arr);
+
+	var arr = [1,2,3,4,5];
+	var obj = {prop1: 1, pro2: 2};
+	var myname = new myFunction();
+	myname.lastName = 'Dng';
+	console.log(myFunction.length);
+	console.log(arr.toString());
+	console.log(obj);
+	console.log(myFunction.toString());
+	console.log(myFunction.call());
+	console.log(myFunction.call());*/
+	
 })(window, document);
