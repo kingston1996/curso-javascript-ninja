@@ -53,7 +53,7 @@ console.log(dalto, ze);
   Mostre no console que a função acima funciona, invocando-a em 3 console.log
   diferentes, com quantidades variáveis de parâmetros passados.
   */
-  console.log( '\nSomar alguns números:' );
+    console.log( '\nSomar alguns números:' );
     console.log(sum(1,1,1));
     console.log(sum(2,2,2,1));
     console.log(sum(10,10,10));
