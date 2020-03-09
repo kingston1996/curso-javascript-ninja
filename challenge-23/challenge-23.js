@@ -25,4 +25,11 @@ multiplicação (x), então no input deve aparecer "1+2x".
 input;
 - Ao pressionar o botão "CE", o input deve ficar zerado.
 */
+
+var $visor = doc.querySelector('[data-js="visor"]');
+var $buttonsNumbers = doc.querySelectorAll('[data-js="button-number"]');
+
+Array.prototype.forEach.call($buttonsNumbers, function (button){
+  console.log(button);
+});
 })(window, document);
