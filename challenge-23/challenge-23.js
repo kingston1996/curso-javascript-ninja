@@ -47,36 +47,49 @@ function handleClickNumber(){
     $visor.value = $visor.value + this.value;
   }
 function handleClickOperation(){
-    removeLastItemIfItIsAnOperator();
+    $visor.value = removeLastItemIfItIsAnOperator($visor.value);
     $visor.value = $visor.value + this.value;
   }
 function handleClickCE(){
-    $visor.value = 0;
+    $visor.value = '';
   }
-function isLastItemAnOperation(){
+function isLastItemAnOperation(number){
   var operations = ['+','-','*','/'];
-  var lastItem = $visor.value.split('').pop();
-   return  operations.some( function(operator){
-    return operator === lastItem;
+  var lastItem = number.split('').pop();
+    return  operations.some( function(operator){
+    return  operator === lastItem;
    });
 }
 
 
-function removeLastItemIfItIsAnOperator(){
-  if(isLastItemAnOperation()){
-      $visor.value = $visor.value.slice(0, -1);
+function removeLastItemIfItIsAnOperator(number){
+  if(isLastItemAnOperation(number)){
+      return number.slice(0, -1);
     }
+    return number;
 }
 
 function handClickEqual(){
-  removeLastItemIfItIsAnOperator();
-  //var allValues = $visor.value.match(/(?:\d+)|[+\-*\/]/g);
+  $visor.value = removeLastItemIfItIsAnOperator($visor.value);
   var allValues = $visor.value.match(/\d+[+\-*\/]?/g);
- var result = allValues.reduce(function (acumulado, atual){
+  $visor.value = allValues.reduce(function (acumulado, atual){
+  var firstValue = acumulado.slice(0,-1);
+  var operator = acumulado.split('').pop();
+  var lastValue = removeLastItemIfItIsAnOperator(atual);
+  var lastOperator = isLastItemAnOperation(atual) ? atual.split('').pop() : '';
+  switch(operator){
+    case '+':
+        return (+firstValue + +lastValue) + lastOperator;
+    case '-':
+        return (+firstValue - +lastValue) + lastOperator;
+    case '*':
+        return (+firstValue * +lastValue) + lastOperator;
+    case '/':
+        return (+firstValue / +lastValue) + lastOperator;
+  }
+ // console.log(firstValue, operator, atual);
     return acumulado + atual;
   });
- console.log(result);
-
 }
 
 })(window, document);
