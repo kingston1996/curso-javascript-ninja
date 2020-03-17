@@ -61,14 +61,22 @@ function isLastItemAnOperation(){
    });
 }
 
-function handClickEqual(){
-  removeLastItemIfItIsAnOperator();
-}
+
 function removeLastItemIfItIsAnOperator(){
   if(isLastItemAnOperation()){
       $visor.value = $visor.value.slice(0, -1);
     }
 }
 
+function handClickEqual(){
+  removeLastItemIfItIsAnOperator();
+  //var allValues = $visor.value.match(/(?:\d+)|[+\-*\/]/g);
+  var allValues = $visor.value.match(/\d+[+\-*\/]?/g);
+ var result = allValues.reduce(function (acumulado, atual){
+    return acumulado + atual;
+  });
+ console.log(result);
+
+}
 
 })(window, document);
