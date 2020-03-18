@@ -5,7 +5,16 @@
 	<title>JS Ninja JK</title>
 </head>
 <body>
-	
 	<script src="js/main.js"></script>
+    <a href="javascript:boom()">BOOM!</a>
+    <a href="#" onclick="boom()">BOOM! onclick</a>
+  <script>
+    var $a = document.querySelector('a');
+    $a.addEventListener('click', boom, false);
+    function boom(event){
+     // event.preventDefault();
+      alert('BOOOOOOOOOOOOOOOMMMMMMMMMMMMMMMMMMMM!');
+    }
+  </script>
 </body>
 </html>
