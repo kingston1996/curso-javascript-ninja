@@ -5,16 +5,21 @@
 	<title>JS Ninja JK</title>
 </head>
 <body>
-	<script src="js/main.js"></script>
-    <a href="javascript:boom()">BOOM!</a>
-    <a href="#" onclick="boom()">BOOM! onclick</a>
+  <a href="javascript:boom()">BOOM!</a>
+  <a href="#" onclick="boom()">BOOM! onclick</a>
   <script>
     var $a = document.querySelector('a');
     $a.addEventListener('click', boom, false);
     function boom(event){
      // event.preventDefault();
-      alert('BOOOOOOOOOOOOOOOMMMMMMMMMMMMMMMMMMMM!');
-    }
-  </script>
+     alert('BOOOOOOOOOOOOOOOMMMMMMMMMMMMMMMMMMMM!');
+   }
+ </script>
+ <div data-js="div">
+  <a href="#" data-js="link">Link
+    <span data-js="span">span</span>
+  </a>
+</div>
+<script src="js/main.js"></script>
 </body>
 </html>
