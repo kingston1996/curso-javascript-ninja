@@ -1,3 +1,5 @@
+(function (win, doc){
+  'use strict';
 /*
 Aproveitando a lib DOM que fizemos na semana anterior, crie agora para ela
 métodos semelhantes aos que existem no array, mas que sirvam para os
@@ -19,3 +21,68 @@ Crie os seguintes métodos para verificação de tipo:
 - isArray, isObject, isFunction, isNumber, isString, isBoolean, isNull.
 O método isNull deve retornar `true` se o valor for null ou undefined.
 */
+
+function DOM(elements){
+  this.elements = document.querySelectorAll(elements);
+}
+
+
+DOM.prototype.on  = function on(eventType, callback){
+  Array.prototype.forEach.call(this.element, function(element){
+      element.addEventListener(eventType, callback, false);
+  });
+};
+
+DOM.prototype.off = function off(eventType, callback){
+  Array.prototype.forEach.call(this.element, function(element){
+      element.removeEventListener(eventType, callback, false);
+  });
+};
+
+DOM.prototype.get = function get(){
+  return this.element;
+};
+
+DOM.prototype.forEach = function forEach(){
+  return Array.prototype.forEach.apply(this.element, arguments);
+};
+
+DOM.prototype.isArray = function isArray(param){
+  return Object.prototype.toString.call(param) === '[object Array]';
+}
+
+var a$ = new DOM('[data-js="link"]');
+var dataJs = $a.map(function(item){
+  return acc + ' '+ item.getAttribute('data-js') + index;
+ });
+
+DOM.prototype.map = function map(item){
+  return Array.prototype.map.apply(this.element, arguments);
+}
+
+DOM.prototype.filter = function filter(){
+  return Array.prototype.filter.apply(this.element, arguments);
+}
+
+DOM.prototype.reduce = function reduce(){
+  return Array.prototype.reduce.apply(this.element, arguments);
+}
+
+DOM.prototype.reduceRight = function reduceRight(){
+  return Array.prototype.reduceRight.apply(this.element, arguments);
+}
+
+DOM.prototype.every = function every(){
+  return Array.prototype.every.apply(this.element, arguments);
+}
+
+DOM.prototype.some = function some(){
+  return Array.prototype.some.apply(this.element, arguments);
+}
+
+DOM.prototype.isNull = function isNull(param){
+  return Object.prototype.toString.call(param) === '[object Null]'
+  || Object.prototype.toString.call(param) === '[object Undefined]'
+};
+
+})(window, document);
