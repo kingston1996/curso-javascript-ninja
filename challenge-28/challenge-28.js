@@ -1,3 +1,5 @@
+  (function (){
+    'use strict';
   /*
   No HTML:
   - Crie um formulário com um input de texto que receberá um CEP e um botão
@@ -25,3 +27,78 @@
   - Utilize a lib DOM criada anteriormente para facilitar a manipulação e
   adicionar as informações em tela.
   */
+function DOM(elements){
+  this.elements = document.querySelectorAll(elements);
+}
+/*
+DOM.prototype.on  = function on(eventType, callback){
+  Array.prototype.forEach.call(this.element, function(element){
+      element.addEventListener(eventType, callback, false);
+  });
+};
+*/
+DOM.prototype.off = function off(eventType, callback){
+  Array.prototype.forEach.call(this.element, function(element){
+      element.removeEventListener(eventType, callback, false);
+  });
+};
+
+DOM.prototype.get = function get(){
+  return this.element;
+};
+
+DOM.prototype.forEach = function forEach(){
+  return Array.prototype.forEach.apply(this.element, arguments);
+};
+
+DOM.prototype.isArray = function isArray(param){
+  return Object.prototype.toString.call(param) === '[object Array]';
+}
+
+DOM.prototype.map = function map(item){
+  return Array.prototype.map.apply(this.element, arguments);
+}
+
+DOM.prototype.filter = function filter(){
+  return Array.prototype.filter.apply(this.element, arguments);
+}
+
+DOM.prototype.reduce = function reduce(){
+  return Array.prototype.reduce.apply(this.element, arguments);
+}
+
+DOM.prototype.reduceRight = function reduceRight(){
+  return Array.prototype.reduceRight.apply(this.element, arguments);
+}
+
+DOM.prototype.every = function every(){
+  return Array.prototype.every.apply(this.element, arguments);
+}
+
+DOM.prototype.some = function some(){
+  return Array.prototype.some.apply(this.element, arguments);
+}
+
+DOM.prototype.isNull = function isNull(param){
+  return Object.prototype.toString.call(param) === '[object Null]'
+  || Object.prototype.toString.call(param) === '[object Undefined]'
+};
+
+var $formCEP = new DOM('[data-js="form-cep"]');
+$formCEP.on('submit', handleSubmitFormCep);
+var ajax = new XMLHttpRequest();
+
+function handleSubmitFormCep(event){
+  event.preventDefault();
+  ajax.open('GET', 'https://viacep.com.br/ws/[CEP]/json/');
+  ajax.send();
+  ajax.addEventListener('readystatechange', handleReadyStateChange);
+}
+
+function handleReadyStateChange(){
+    if(ajax.readystatechange === 4 & ajax.status === 200){
+      console.log('Popular formulário', ajax.reponseText);
+    }
+    console.log('Carregando...');
+  }
+})(window, document);

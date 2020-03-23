@@ -1,0 +1,26 @@
+Tem algumas bibliotecas que ajudam com isso. Para o curso, pode usar o http-server :)
+
+Se você estiver usando a versão 5.2 ou superior do NPM, ele já vem com uma ferramenta chamada npx, que facilita o uso do http-server.
+
+Para saber sua versão do NPM, execute no seu terminal:
+
+npm -v
+Se a versão for maior que 5.2, você pode usar o http-server assim:
+
+Primeiro, acesse via terminal o diretório do seu projeto, onde está o arquivo index.html.
+
+Nesse diretorio, execute o comando no seu terminal:
+
+npx http-server .
+Esse comando vai subir um servidor local na porta 8081 (se for alguma porta diferente, vai aparecer o endereço correto no seu terminal).
+
+Para derrubar o servidor, é só voltar ao terminal e pressionar Ctrl + C :)
+
+
+Se você rodar o comando com -c, você pode definir um tempo para usar como cache. Se usar -c10, ele vai usar 10 segundos. Se usar -c-1, ele não faz cache :)
+
+No comando todo, ficaria:
+
+npx http-server -c-1 .
+=)
+
