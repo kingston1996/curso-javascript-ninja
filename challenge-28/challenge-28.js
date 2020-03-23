@@ -30,13 +30,13 @@
 function DOM(elements){
   this.elements = document.querySelectorAll(elements);
 }
-/*
+
 DOM.prototype.on  = function on(eventType, callback){
   Array.prototype.forEach.call(this.element, function(element){
       element.addEventListener(eventType, callback, false);
   });
 };
-*/
+
 DOM.prototype.off = function off(eventType, callback){
   Array.prototype.forEach.call(this.element, function(element){
       element.removeEventListener(eventType, callback, false);
@@ -85,12 +85,14 @@ DOM.prototype.isNull = function isNull(param){
 };
 
 var $formCEP = new DOM('[data-js="form-cep"]');
+var $inputCEP = new DOM('[data-js="input-cep"]');
 $formCEP.on('submit', handleSubmitFormCep);
 var ajax = new XMLHttpRequest();
 
 function handleSubmitFormCep(event){
   event.preventDefault();
-  ajax.open('GET', 'https://viacep.com.br/ws/[CEP]/json/');
+  var url = 'https://viacep.com.br/ws/[CEP]/json/'.replace('[CEP]', $inputCEP.get()[0].value):
+  ajax.open('GET', url);
   ajax.send();
   ajax.addEventListener('readystatechange', handleReadyStateChange);
 }
